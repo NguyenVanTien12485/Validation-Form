@@ -81,3 +81,7 @@ Validator.numberLength= function(selector, min, max) {
     };
 };
 
+//reset form  ( thẻ button không support reset()- thẻ input thì support reset() )
+function myFunction() {
+    document.getElementById("form-1").reset();
+  }
