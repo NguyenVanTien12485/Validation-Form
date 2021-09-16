@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validation</title>
+</head>
+<body>
+    <div class="main">
+
+        <form action="" method="POST" class="form" id="form-1">
+          <h3 class="heading">Đăng ký trở thành đối tác OKXE</h3>
+          <img src="/img/favicon.ico" alt="#">
+        
+          <div class="spacer"></div>
+      
+          <div class="form-group">
+            <label for="fullname" class="form-label">Tên cửa hàng xe máy</label>
+            <input id="fullname" name="fullname" type="text" placeholder="Ví dụ: Xe máy Tấn Quang" class="form-control">
+            <span class="form-message"></span>
+          </div>
+      
+          
+          <div class="form-group">
+            <label for="dress" class="form-label">Địa chỉ</label>
+            <input id="dress" name="dress" type="dress" placeholder="Nhập địa chỉ" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone_number" class="form-label">Số điện thoại</label>
+            <input id="phone_number" name="phone_number" placeholder="nhập số điện thoại" type="text" class="form-control">
+            <span class="form-message"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" name="email" type="text" placeholder="Ví dụ: xemaytanquan@gmail.com" class="form-control">
+            <span class="form-message"></span>
+          </div>
+
+          <button class="form-submit">Đăng ký</button>
+          <button class="reset-btn">Làm mới</button>
+        </form>
+      
+      </div>
+
+    <script src="Validation.js"></script>
+    <script>
+      Validator({
+        form: '#form-1',
+        errorSelector: '.form-message',
+        rules: [
+          Validator.isRequired('#fullname'),
+          Validator.isEmail('#email', `Vui lòng nhập Email`),
+          Validator.dressLength('#dress', 5, 200,`Vui lòng nhập địa chỉ`),
+          Validator.numberLength('#phone_number', 9, 11, `Vui lòng nhập số điện thoại`)
+        ]
+      });
+    </script>
+
+     
+</body>
+</html>
